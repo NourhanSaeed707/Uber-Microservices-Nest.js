@@ -33,6 +33,9 @@
     },
     {
       "path": "./apps/rider-service/tsconfig.app.json"
+    },
+    {
+      "path": "./apps/logging/tsconfig.app.json"
     }
   ]
 }

@@ -3,15 +3,15 @@ import { HydratedDocument } from "mongoose";
 
 export type RiderCoordinateDocument = HydratedDocument<RiderCoordinate>;
 
-@Schema()
+@Schema({ autoCreate: true })
 export class RiderCoordinate {
-    @Prop({required: true})
+    @Prop({ required: true })
     lat: number;
 
-    @Prop({required: true})
+    @Prop({ required: true })
     lng: number;
 
-    @Prop({required: true})
+    @Prop({ required: true })
     rider: string;
 
 }

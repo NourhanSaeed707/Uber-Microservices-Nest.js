@@ -1,17 +1,19 @@
 import { Body, Controller, Get, Post } from '@nestjs/common';
 import { CreateCoordinatesDTO } from './dto/create-coordinates.dto.js';
+import { RiderCoordinatesService } from './rider-coordinates.service.js';
 
 @Controller('/v1/rider-coordinates')
 export class RiderCoordinatesController {
+    constructor(private riderCoordinateService: RiderCoordinatesService) { }
 
     @Get()
-    getRiderCoordinates() {
-        console.log("hello from rider coordinates");
+    async getRiderCoordinates() {
+        return await this.riderCoordinateService.getAll();
 
     }
 
     @Post()
-    save(@Body() createCoordinatesDTO: CreateCoordinatesDTO) {
-       return createCoordinatesDTO;
+    async save(@Body() createCoordinatesDTO: CreateCoordinatesDTO) {
+        return await this.riderCoordinateService.save(createCoordinatesDTO);
     }
 }

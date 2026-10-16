@@ -6,7 +6,7 @@ import { RiderCoordinatesModule } from './rider-coordinates/rider-coordinates.mo
 
 @Module({
   imports: [
-    MongooseModule.forRoot('mongodb://root:root@localhost:27017/logs_db?authSource=admin',
+    MongooseModule.forRoot( 'mongodb://root:root@localhost:27017/logs_db?authSource=admin',
       {
         autoCreate: true,
         connectionFactory: (connection) => {

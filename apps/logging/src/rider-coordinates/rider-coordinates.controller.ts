@@ -12,6 +12,6 @@ export class RiderCoordinatesController {
 
     @Post()
     save(@Body() createCoordinatesDTO: CreateCoordinatesDTO) {
-
+       return createCoordinatesDTO;
     }
 }

@@ -1,4 +1,5 @@
 import { Body, Controller, Get, Post } from '@nestjs/common';
+import { CreateCoordinatesDTO } from './dto/create-coordinates.dto.js';
 
 @Controller('/v1/rider-coordinates')
 export class RiderCoordinatesController {
@@ -9,8 +10,8 @@ export class RiderCoordinatesController {
 
     }
 
-    @Post(@Body() createCoordinatesDTO: CreateCoordinatesDTO)
-    save() {
+    @Post()
+    save(@Body() createCoordinatesDTO: CreateCoordinatesDTO) {
 
     }
 }

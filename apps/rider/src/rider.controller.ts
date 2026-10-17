@@ -1,12 +1,12 @@
-import { Controller, Get } from '@nestjs/common';
+import { Controller, Get, Param } from '@nestjs/common';
 import { RiderService } from './rider.service.js';
 
-@Controller()
+@Controller('/v1/rider')
 export class RiderController {
   constructor(private readonly riderService: RiderService) {}
 
-  @Get()
-  getHello(): string {
+  @Get(':id')
+  getRiderById(@Param() param: any) {
     return this.riderService.getHello();
   }
 }

@@ -1,8 +1,9 @@
 import { NestFactory } from '@nestjs/core';
-import { RiderServiceModule } from './rider-service.module.js';
+import { RiderModule } from './rider.module.js';
 
 async function bootstrap() {
-  const app = await NestFactory.create(RiderServiceModule);
+  const app = await NestFactory.create(RiderModule);
+  app.setGlobalPrefix("api");
   await app.listen(process.env.port ?? 3001);
 }
 await bootstrap();

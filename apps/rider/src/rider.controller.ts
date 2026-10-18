@@ -4,11 +4,16 @@ import { MessagePattern } from '@nestjs/microservices';
 
 @Controller('/v1/rider')
 export class RiderController {
-  constructor(private readonly riderService: RiderService) {}
+  constructor(private readonly riderService: RiderService) { }
 
   @Get(':id')
-  @MessagePattern({cmd: " get-rider"})
-  getRiderById(@Param() param: any) {
-    return this.riderService.getHello();
+  @MessagePattern({ cmd: " get-rider" })
+  async getRiderById(data: any) {
+    return Promise.resolve({
+      _id: data.id,
+      firstName: "jane",
+      lastName: "doe",
+      email: "jane@mail.com"
+    })
   }
 }

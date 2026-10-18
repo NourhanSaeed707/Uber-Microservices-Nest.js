@@ -6,7 +6,7 @@ import { RiderCoordinatesService } from './rider-coordinates.service.js';
 export class RiderCoordinatesController {
     constructor(private riderCoordinateService: RiderCoordinatesService) { }
 
-    @Get()
+    @Get(":id")
     async getRiderCoordinates(@Param() params: any) {
         return await this.riderCoordinateService.getAll(params.id);
 
